@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search String</title>
+<script>
+    function searchString() {
+        let inputString = document.getElementById("inputString").value;
+        let searchWord = document.getElementById("searchWord").value;
+
+        if (inputString.includes(searchWord)) {
+            document.getElementById("result").textContent = "Text containing the word '" + searchWord +  "' From: " + inputString;
+        } else {
+            document.getElementById("result").textContent = "The word '" + searchWord + "' was not found in the input string.";
+        }
+    }
+</script>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        background: whitesmoke;
+        margin: 200px;
+        width: 400px;
+        height: 100px;
+        padding: 50px;
+    }
+    .inpt{
+        margin-bottom: 15px;
+    }
+    .btn {
+        padding: 8px 10px;
+        background-color: maroon;
+        color: white;
+    }
+</style>
+<body>
+    <div class="container">
+    <label for="inputString">Enter a string:</label>
+    <input type="text" class=inpt id="inputString" required>
+    <br>
+    <label for="searchWord">Enter a word to search:</label>
+    <input type="text" class=inpt id="searchWord" required>
+    <br>
+    <button class=btn onclick="searchString()">Search</button>
+
+    <br><br><br><br>
+    <div id="result"></div>
+</div>
+</body>
+</html>
